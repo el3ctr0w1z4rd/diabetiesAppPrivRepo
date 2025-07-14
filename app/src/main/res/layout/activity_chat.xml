@@ -1,0 +1,18 @@
+@@ .. @@
+         android:text="Send" />
++
++    <Button
++        android:id="@+id/backButton"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:text="Back"
++        android:backgroundTint="#000000"
++        android:textColor="#FFFFFF" />
++
++    <ProgressBar
++        android:id="@+id/progressBar"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_gravity="center"
++        android:visibility="gone" />
+ </LinearLayout>
