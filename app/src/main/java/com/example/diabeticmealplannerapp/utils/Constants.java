@@ -13,7 +13,6 @@ public class Constants {
     
     // API endpoints
     public static final String GROQ_BASE_URL = "https://api.groq.com/";
-    public static final String OPENAI_BASE_URL = "https://api.openai.com/";
     
     // Groq model configurations for free tier
     public static final String GROQ_FREE_MODEL = "llama-3.1-8b-instant";

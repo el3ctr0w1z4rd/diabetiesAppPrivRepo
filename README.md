@@ -36,9 +36,9 @@ An Android application designed to help diabetic individuals manage their blood 
   - Carbohydrate counting
   - General diabetes care
 
-### 5. Food Scanner
-- Uses OpenAI Vision API to analyze food images
-- Automatically identifies food items
+### 5. AI Food Analyzer
+- Uses Groq AI to analyze food by name
+- Provides detailed nutritional analysis
 - Provides nutritional information:
   - Carbohydrates per 100g
   - Calories per 100g
@@ -52,7 +52,6 @@ An Android application designed to help diabetic individuals manage their blood 
 - Android Studio
 - Android SDK (API level 24 or higher)
 - Groq API key (for chat functionality)
-- OpenAI API key (for food scanning)
 
 ### Installation
 
@@ -60,21 +59,13 @@ An Android application designed to help diabetic individuals manage their blood 
 2. Open in Android Studio
 3. Add your API keys to `gradle.properties`:
    ```
-   GROQ_API_KEY=your_groq_api_key_here
-   OPENAI_API_KEY=your_openai_api_key_here
+   GROQ_API_KEY=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
    ```
 
 ### Getting API Keys
 
 #### Groq API Key
 The Groq API key is already configured in the project. The app uses the free `llama-3.1-8b-instant` model which is well-suited for diabetes management assistance.
-
-#### OpenAI API Key
-1. Visit [OpenAI Platform](https://platform.openai.com/)
-2. Sign up for an account
-3. Navigate to API Keys section
-4. Create a new API key
-5. Copy the key to your `gradle.properties` file
 
 ### Build and Run
 1. Sync the project with Gradle files
@@ -117,6 +108,12 @@ The Groq API key is already configured in the project. The app uses the free `ll
 2. Ensure the food is the main subject in the image
 3. Verify results, especially for low-confidence detections
 
+### AI Food Analyzer
+1. Enter the exact name of the food item
+2. Wait for AI analysis (usually 2-3 seconds)
+3. Review the detailed nutritional breakdown
+4. Verify results, especially for low-confidence detections
+
 ### Chat Assistant
 1. Ask specific questions about diabetes management
 2. Always consult healthcare professionals for medical decisions
@@ -128,15 +125,13 @@ The Groq API key is already configured in the project. The app uses the free `ll
 - This app is for educational and informational purposes only
 - Always consult with healthcare professionals for medical advice
 - Blood glucose predictions are estimates and should not replace actual testing
-- Food scanning results should be verified for accuracy
+- AI food analysis results should be verified for accuracy
 - Individual responses to food and insulin may vary
 
 ## Technical Requirements
 
 - Android 7.0 (API level 24) or higher
 - Internet connection for AI features
-- Camera permission for food scanning
-- Storage permission for image selection
 
 ## Support
 

@@ -10,7 +10,6 @@ import java.util.concurrent.TimeUnit;
 
 public class ApiClient {
     private static Retrofit groqRetrofit;
-    private static Retrofit openAIRetrofit;
 
     public static GroqApiService getGroqApiService() {
         if (groqRetrofit == null) {
@@ -30,25 +29,5 @@ public class ApiClient {
                     .build();
         }
         return groqRetrofit.create(GroqApiService.class);
-    }
-
-    public static OpenAIApiService getOpenAIApiService() {
-        if (openAIRetrofit == null) {
-            HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
-            logging.setLevel(HttpLoggingInterceptor.Level.BODY);
-
-            OkHttpClient client = new OkHttpClient.Builder()
-                    .addInterceptor(logging)
-                    .connectTimeout(60, TimeUnit.SECONDS)
-                    .readTimeout(60, TimeUnit.SECONDS)
-                    .build();
-
-            openAIRetrofit = new Retrofit.Builder()
-                    .baseUrl(Constants.OPENAI_BASE_URL)
-                    .client(client)
-                    .addConverterFactory(GsonConverterFactory.create())
-                    .build();
-        }
-        return openAIRetrofit.create(OpenAIApiService.class);
     }
 }

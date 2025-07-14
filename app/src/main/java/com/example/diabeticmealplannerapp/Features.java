@@ -4,7 +4,7 @@
          featuresList.add("Create Meal Plans");
          featuresList.add("Glycemic Index Reference");
 +        featuresList.add("AI Chat Assistant");
-+        featuresList.add("Food Scanner");
+        featuresList.add("AI Food Analyzer");
 
          // Setup adapter
 @@ .. @@
@@ -12,13 +12,13 @@
          Intent mealPlannerIntent = new Intent(this, MealPlanner.class);
          Intent glycemicIndexReferenceIntent = new Intent(this, GlycemicIndexReference.class);
 -//        Intent homeIntent = new Intent(this, MainActivity.class);
-+        Intent chatIntent = new Intent(this, ChatActivity.class);
+        Intent foodAnalyzerIntent = new Intent(this, FoodAnalyzerActivity.class);
 +        Intent foodScannerIntent = new Intent(this, FoodScannerActivity.class);
 
          // List click listener
 @@ .. @@
                      case 2:
-                         featuresClassLauncher.launch(glycemicIndexReferenceIntent);
+                        featuresClassLauncher.launch(foodAnalyzerIntent);
                          break;
 +                    case 3:
 +                        featuresClassLauncher.launch(chatIntent);

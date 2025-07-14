@@ -50,7 +50,7 @@
             android:exported="false" />
             
         <activity
-            android:name=".FoodScannerActivity"
+            android:name=".FoodAnalyzerActivity"
             android:exported="false" />
             
     </application>
