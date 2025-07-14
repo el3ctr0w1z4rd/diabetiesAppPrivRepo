@@ -1,0 +1,123 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAFAFA">
+
+    <TextView
+        android:id="@+id/currentBloodGlucoseValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        android:text="Blood Glucose" />
+
+    <EditText
+        android:id="@+id/targetBG"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp"
+        android:hint="Target BG" />
+
+    <EditText
+        android:id="@+id/insulinDose"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="120dp"
+        android:hint="Insulin Dose"  />
+
+    <EditText
+        android:id="@+id/isr"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="170dp"
+        android:hint="Insulin Sensitivity Ratio" />
+
+    <EditText
+        android:id="@+id/foodName"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="220dp"
+        android:hint="Capitalize the first letter of each word and add spaces between words"
+        />
+
+    <EditText
+        android:id="@+id/servingSize"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="270dp"
+        android:hint="Serving Size"
+         />
+
+    <Button
+        android:id="@+id/addMeal"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Add Meal"
+        android:backgroundTint="#000000"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="320dp"/>
+
+    <Button
+        android:id="@+id/removeMeal"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Remove Meal"
+        android:backgroundTint="#000000"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="380dp"/>
+
+    <TextView
+        android:id="@+id/mealItems"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:text="Meal List"
+        android:layout_marginTop="460dp"/>
+
+    <Button
+        android:id="@+id/saveMeal"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="#000000"
+        android:layout_marginTop="720dp"
+        android:text="Save Meal" />
+
+    <ListView
+        android:id="@+id/mealsList"
+        android:layout_width="350dp"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="490dp" />
+
+    <Button
+        android:id="@+id/backButtonMP"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="#000000"
+        android:layout_marginTop="780dp"
+        />
+
+</RelativeLayout>
