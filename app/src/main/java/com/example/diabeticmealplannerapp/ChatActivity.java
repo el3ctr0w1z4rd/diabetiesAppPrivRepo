@@ -67,13 +67,23 @@ public class ChatActivity extends AppCompatActivity {
         
         // Add system message for diabetes-focused responses
         GroqChatRequest.Message systemMessage = new GroqChatRequest.Message("system", 
-            "You are a helpful assistant specialized in diabetes management, nutrition, and blood glucose monitoring. " +
-            "Provide accurate, helpful information about diabetes care, meal planning, carbohydrate counting, " +
-            "and blood glucose management. Always remind users to consult healthcare professionals for medical advice.");
+            "You are a diabetes management assistant. Provide helpful information about:\n" +
+            "- Blood glucose monitoring and management\n" +
+            "- Carbohydrate counting and meal planning\n" +
+            "- Insulin dosing basics (general information only)\n" +
+            "- Healthy eating for diabetics\n" +
+            "- Exercise and diabetes\n" +
+            "Keep responses concise and practical. Always remind users to consult their healthcare team for medical decisions. " +
+            "Focus on educational information, not medical advice.");
         
         conversationHistory.add(systemMessage);
         
-        appendChat("Assistant: Hello! I'm here to help you with diabetes management, nutrition questions, and blood glucose monitoring. How can I assist you today?");
+        appendChat("Assistant: Hello! I'm your diabetes management assistant. I can help with:\n" +
+                  "• Blood glucose monitoring tips\n" +
+                  "• Carb counting and meal planning\n" +
+                  "• General diabetes care information\n" +
+                  "• Healthy lifestyle advice\n\n" +
+                  "What would you like to know?");
     }
 
     private void setupClickListeners() {
@@ -108,13 +118,17 @@ public class ChatActivity extends AppCompatActivity {
     }
 
     private void sendMessageToGroq() {
-        if (BuildConfig.GROQ_API_KEY.isEmpty()) {
+        if (BuildConfig.GROQ_API_KEY == null || BuildConfig.GROQ_API_KEY.isEmpty() || 
+            BuildConfig.GROQ_API_KEY.equals("your_groq_api_key_here")) {
             appendChat("Assistant: API key not configured. Please add your Groq API key to use the chat feature.");
             setLoadingState(false);
             return;
         }
 
-        GroqChatRequest request = new GroqChatRequest("llama-3.3-70b-versatile", conversationHistory);
+        // Use the free model that's best suited for diabetes assistance
+        GroqChatRequest request = new GroqChatRequest(Constants.GROQ_FREE_MODEL, conversationHistory);
+        request.setTemperature(Constants.GROQ_TEMPERATURE);
+        request.setMax_tokens(Constants.GROQ_MAX_TOKENS);
         
         Call<GroqChatResponse> call = groqApiService.getChatCompletion(
             "Bearer " + BuildConfig.GROQ_API_KEY,

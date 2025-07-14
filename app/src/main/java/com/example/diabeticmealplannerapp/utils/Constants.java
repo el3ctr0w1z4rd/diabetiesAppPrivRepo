@@ -15,6 +15,11 @@ public class Constants {
     public static final String GROQ_BASE_URL = "https://api.groq.com/";
     public static final String OPENAI_BASE_URL = "https://api.openai.com/";
     
+    // Groq model configurations for free tier
+    public static final String GROQ_FREE_MODEL = "llama-3.1-8b-instant";
+    public static final int GROQ_MAX_TOKENS = 800;
+    public static final double GROQ_TEMPERATURE = 0.7;
+    
     // SharedPreferences keys
     public static final String PREF_BLOOD_GLUCOSE = "bloodGlucoseData";
     public static final String PREF_SAVED_MEALS = "SavedMeals";

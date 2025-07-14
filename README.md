@@ -67,11 +67,7 @@ An Android application designed to help diabetic individuals manage their blood 
 ### Getting API Keys
 
 #### Groq API Key
-1. Visit [Groq Console](https://console.groq.com/)
-2. Sign up for an account
-3. Navigate to API Keys section
-4. Create a new API key
-5. Copy the key to your `gradle.properties` file
+The Groq API key is already configured in the project. The app uses the free `llama-3.1-8b-instant` model which is well-suited for diabetes management assistance.
 
 #### OpenAI API Key
 1. Visit [OpenAI Platform](https://platform.openai.com/)
@@ -124,7 +120,8 @@ An Android application designed to help diabetic individuals manage their blood 
 ### Chat Assistant
 1. Ask specific questions about diabetes management
 2. Always consult healthcare professionals for medical decisions
-3. Use the chat for educational purposes and general guidance
+3. The assistant uses Groq's free tier with optimized settings
+4. Responses are focused on educational diabetes information
 
 ## Important Disclaimers
 

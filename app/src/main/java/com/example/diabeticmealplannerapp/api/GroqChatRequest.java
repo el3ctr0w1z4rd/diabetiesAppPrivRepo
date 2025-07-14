@@ -11,8 +11,8 @@ public class GroqChatRequest {
     public GroqChatRequest(String model, List<Message> messages) {
         this.model = model;
         this.messages = messages;
-        this.temperature = 0.7;
-        this.max_tokens = 1000;
+        this.temperature = 0.7; // Good balance for diabetes advice
+        this.max_tokens = 800;   // Optimized for free tier
     }
 
     // Getters and setters
